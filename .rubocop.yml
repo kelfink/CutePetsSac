@@ -1,0 +1,26 @@
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+
+Metrics/AbcSize:
+  Max: 33
+
+# Configuration parameters: CountComments, ExcludedMethods.
+Metrics/BlockLength:
+  Max: 66
+
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 120
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 30
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: module_function, extend_self
+Style/ModuleFunction:
+  EnforcedStyle: extend_self
+
