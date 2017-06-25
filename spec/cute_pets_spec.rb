@@ -6,10 +6,9 @@ describe 'CutePets' do
   describe '.post_pet' do
     before do
       @pet_hash = { name:        'schooples',
-                   link:         'http://www.example.com/schooples',
-                   pic:          'http://www.example.com/schooples.jpg',
-                   description:  'neutured female fluffy dog'
-                 }
+                    link:         'http://www.example.com/schooples',
+                    pic:          'http://www.example.com/schooples.jpg',
+                    description:  'neutured female fluffy dog' }
     end
     it 'fetches pet finder data when the env var datasource is set to petfinder' do
       ENV.stub :fetch, 'petfinder' do

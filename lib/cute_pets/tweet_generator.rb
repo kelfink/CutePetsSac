@@ -10,10 +10,11 @@ require 'yaml'
 require 'dotenv'
 Dotenv.load
 
+# Integrate with Twitter
 module TweetGenerator
   extend self
 
-  MESSAGES = YAML.load(File.open('lib/greetings.yml'))
+  MESSAGES = YAML.safe_load(File.open('lib/greetings.yml'))
 
   def tweet(message, pet_pic_url)
     pet_pic_img = open(pet_pic_url)
@@ -37,7 +38,7 @@ module TweetGenerator
         config.access_token = ENV.fetch('access_token')
         config.access_token_secret = ENV.fetch('access_token_secret')
       rescue KeyError
-        raise "Please check that your twitter keys are correct"
+        raise 'Please check that your twitter keys are correct'
       end
     end
   end

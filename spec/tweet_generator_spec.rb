@@ -5,12 +5,12 @@ describe 'TweetGenerator' do
   describe '.create_message' do
     it 'returns a string with the pet name, description and shelter link' do
       message = TweetGenerator.create_message('Moofle', 'neutered female lab', 'http://www.example.org/moofle')
-      message.must_match /Moofle. I am a neutered female lab. http\:\/\/www\.example\.org\/moofle/
+      message.must_match(%r{Moofle. I am a neutered female lab. http\://www\.example\.org/moofle})
     end
 
     it 'returns a string with the appropriate article' do
       message = TweetGenerator.create_message('Miffle', 'unaltered female kitten', 'http://www.example.org/miffle')
-      message.must_match /Miffle. I am an unaltered female kitten. http\:\/\/www\.example\.org\/miffle/
+      message.must_match(%r{Miffle. I am an unaltered female kitten. http\://www\.example\.org/miffle})
     end
   end
 
